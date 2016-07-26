@@ -9,17 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var SEARCHRESULTS = [
+    { id: 1, name: 'Harry Petter', link: 'www.hp.com' },
+    { id: 2, name: 'Rävbröder', link: 'www.rb.com' },
+    { id: 3, name: 'Magnus Huttus biografi', link: 'www.mhb.com' }
+];
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "EbookFindr";
+        this.search = "";
+        this.searchresults = SEARCHRESULTS;
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html'
+            selector: 'ebookfindr-app',
+            templateUrl: 'app/app.component.html',
+            styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+var searchresult = (function () {
+    function searchresult() {
+    }
+    return searchresult;
+}());
+exports.searchresult = searchresult;
 //# sourceMappingURL=app.component.js.map
