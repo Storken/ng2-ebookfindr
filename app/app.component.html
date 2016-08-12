@@ -9,18 +9,10 @@
      <div class="input-group">
        <input [(ngModel)]="search" type="text" class="form-control" placeholder="Search for an ebook...">
        <span class="input-group-btn">
-         <button class="btn btn-info" type="button">Search!</button>
+         <button class="btn btn-info" type="button" (click)="onSearch(search)">Search</button>
        </span>
      </div><!-- /input-group -->
    </div><!-- /.col-lg-6 -->
  </div>
 </nav>
-<!--
-<div class="container">
- <div class="row">
-   <li *ngFor="let searchresult of searchresults">
-     <span class="badge">{{searchresult.id}}</span>{{searchresult.name}}
-   </li>
- </div>
-</div>
--->
+<search-result></search-result>

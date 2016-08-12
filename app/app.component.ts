@@ -1,25 +1,17 @@
 import { Component } from '@angular/core';
-
-const SEARCHRESULTS: Searchresult[] = [
-  { id: 1, name: 'Harry Petter', link: 'www.hp.com' },
-  { id: 2, name: 'Rävbröder', link: 'www.rb.com' },
-  { id: 3, name: 'Magnus Huttus biografi', link: 'www.mhb.com' }
-]
+import { SearchResultComponent } from './search-result.component';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+import { EbookService } from './ebook.service';
 
 @Component({
   selector: 'ebookfindr-app',
-  templateUrl: 'app/app.component.html',
-  styleUrls: ['app/app.component.css']
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
+  directives: [ROUTER_DIRECTIVES],
+  providers: [EbookService]
 })
 
 export class AppComponent {
-  title = "EbookFindr";
-  search = "";
-  public searchresults = SEARCHRESULTS;
-}
-
-export class searchresult {
-  id: number;
-  name: string;
-  link: string;
+    title = "EbookFindr";
+    search = "";
 }

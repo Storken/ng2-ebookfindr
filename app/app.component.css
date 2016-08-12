@@ -1,3 +1,43 @@
 .searchbar {
-  padding-top: 5px;
+  padding-top: 7px;
+}
+
+.ebook {
+  padding: 10px 10px 10px 10px;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: #ddd;
+}
+
+.ebook .result-image {
+  float: left;
+}
+
+.ebook .result-image .bookcover {
+  height: 150px;
+}
+
+.ebook .result-name {
+  float: left;
+  padding-left: 20px;
+  overflow: auto;
+}
+
+.ebook .result-price {
+  float: right;
+  padding-right: 20px;
+}
+
+.ebook .result-btn {
+  float: right;
+  padding-right: 10px;
+}
+
+.ebook .result-description {
+  float: left;
+  overflow: auto;
+}
+
+li {
+  list-style-type: none;
 }

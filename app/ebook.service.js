@@ -9,24 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var ebook_service_1 = require('./ebook.service');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "EbookFindr";
-        this.search = "";
+var mock_results_1 = require('./mock-results');
+var EbookService = (function () {
+    function EbookService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'ebookfindr-app',
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [ebook_service_1.EbookService]
-        }), 
+    EbookService.prototype.getEbooks = function () {
+        return Promise.resolve(mock_results_1.EBOOKS);
+    };
+    EbookService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], EbookService);
+    return EbookService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.EbookService = EbookService;
+//# sourceMappingURL=ebook.service.js.map

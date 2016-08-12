@@ -8,25 +8,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _this = this;
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
 var ebook_service_1 = require('./ebook.service');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = "EbookFindr";
-        this.search = "";
+var SearchResultComponent = (function () {
+    function SearchResultComponent(ebookService) {
+        this.ebookService = ebookService;
     }
-    AppComponent = __decorate([
+    SearchResultComponent = __decorate([
         core_1.Component({
-            selector: 'ebookfindr-app',
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [ebook_service_1.EbookService]
+            selector: 'search-result',
+            templateUrl: 'app/search-result.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [ebook_service_1.EbookService])
+    ], SearchResultComponent);
+    return SearchResultComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.SearchResultComponent = SearchResultComponent;
+this.ebooks.sort(function (ebook1, ebook2) {
+    if (ebook1.id < ebook2.id) {
+        return -1;
+    }
+    else if (ebook2.id < ebook1.id) {
+        return 1;
+    }
+    return 0;
+});
+ebooks = ebooks.sort();
+getEbooks();
+{
+    this.ebookService.getEbooks().then(function (ebooks) { return _this.ebooks = ebooks; });
+}
+ngOnInit();
+{
+    this.getEbooks();
+}
+//# sourceMappingURL=search-result.component.js.map

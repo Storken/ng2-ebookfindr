@@ -1,0 +1,17 @@
+<div class="container-fluid">
+ <div class="row">
+   <li *ngFor="let ebook of ebooks">
+     <div class="row">
+       <div class="col-lg-12 ebook">
+         <div class="col-lg-1 result-image"><img class="bookcover" src="{{ebook.img}}"/></div>
+         <div class="col-lg-2 result-name"><h5>Title<br/></h5><p>{{ebook.name}}</p></div>
+         <div class="col-lg-1 result-btn"><h5>Find it here<br/></h5>
+           <button class="btn btn-warning" type="button">{{ebook.company}}</button>
+         </div>
+         <div class="col-lg-1 result-price"><h5>Price<br/></h5><p>${{ebook.price}}</div>
+         <div class="col-lg-7 result-description"><h5>Description<br/></h5> <p>{{ebook.description}}</p></div>
+       </div>
+     </div>
+   </li>
+ </div>
+</div>
